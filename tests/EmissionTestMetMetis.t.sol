@@ -121,7 +121,7 @@ contract EmissionTestMetMetis is BaseTest {
 
     emissionsPerAsset[0] = EmissionPerAsset({
       asset: AaveV3MetisAssets.Metis_A_TOKEN,
-      emission: TOTAL_DISTRIBUTION / 7 // 14.2857% of the distribution
+      emission: 14_285_714285714285714285 // 14.2857% of the distribution
     });
     emissionsPerAsset[1] = EmissionPerAsset({
       asset: AaveV3MetisAssets.WETH_A_TOKEN,
