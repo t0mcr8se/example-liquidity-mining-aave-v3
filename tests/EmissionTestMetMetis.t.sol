@@ -28,7 +28,7 @@ contract EmissionTestMetMetis is BaseTest {
   ITransferStrategyBase constant TRANSFER_STRATEGY =
     ITransferStrategyBase(0xC353D1A5C4242F400b61EEe34dC2213cdAb4Ef80);
 
-  uint256 constant TOTAL_DISTRIBUTION = 6750 ether; // 6750 Metis/month
+  uint256 constant TOTAL_DISTRIBUTION = 15000 ether; // 15000 Metis/month
   uint88 constant DURATION_DISTRIBUTION = 30 days;
 
   address METIS_WHALE = 0xD3545B9E29cefd2273d2C6f64b4Ee8ebBaE5Af11;
@@ -62,7 +62,7 @@ contract EmissionTestMetMetis is BaseTest {
 
     // fund the emissions admin
     vm.startPrank(METIS_WHALE);
-    IERC20(REWARD_ASSET).transfer(EMISSION_ADMIN, 6750 ether);
+    IERC20(REWARD_ASSET).transfer(EMISSION_ADMIN, TOTAL_DISTRIBUTION);
     vm.stopPrank();
 
     // test claim rewards
@@ -86,7 +86,7 @@ contract EmissionTestMetMetis is BaseTest {
 
     uint256 balanceAfter = IERC20(REWARD_ASSET).balanceOf(vWETH_WHALE);
 
-    uint256 expectedRewards = vWethWhaleBalance * (675 ether) / vWethSupply;
+    uint256 expectedRewards = vWethWhaleBalance * (TOTAL_DISTRIBUTION / 10) / vWethSupply;
     uint256 deviationAccepted = 5 ether;
     assertApproxEqAbs(
       balanceAfter - balanceBefore,
