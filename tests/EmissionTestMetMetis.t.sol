@@ -31,6 +31,7 @@ contract EmissionTestMetMetis is BaseTest {
   uint256 constant TOTAL_DISTRIBUTION = 37 * 80 ether; // 80 Metis/day
   uint88 constant DURATION_DISTRIBUTION = 37 days;
 
+
   address METIS_WHALE = 0xD3545B9E29cefd2273d2C6f64b4Ee8ebBaE5Af11;
   address vWETH_WHALE = 0x77d0Fb80eb7902c9A8952A47e0D189dB845fceb7;
 
